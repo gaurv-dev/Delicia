@@ -120,19 +120,20 @@ Delicia/
  Loyalty points & discount coupons
  Multi-language support
  Dockerized deployment
+ 
 🤝 Contributing
-```
+
 Contributions and feature requests are welcome!
 
 Fork the repo
-Create a branch 
+Create a branch (git checkout -b feature/amazing-feature)
 Commit your changes
 Push and open a Pull Request
 🔗 Connect
 
 ⭐ If you like this project, consider starring the repo on GitHub — it helps a lot!
 
-🔗 GitHub: github.com/your-username/delicia
+🔗 GitHub: github.com/gaurv-dev/delicia
 
 <div align="center">
 🎂 Delicia — Because every celebration deserves a cake that's uniquely yours.

@@ -121,7 +121,7 @@ Delicia/
  Multi-language support
  Dockerized deployment
 🤝 Contributing
-
+```
 Contributions and feature requests are welcome!
 
 Fork the repo

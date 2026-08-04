@@ -7,7 +7,6 @@
 
 </div>
 
-
 ## 🍰 About Delicia
 
 Picture this: it's someone's birthday, and instead of scrolling through a bakery's fixed menu hoping something "close enough" shows up, they open **Delicia** — and build the cake they actually imagined.
@@ -82,7 +81,6 @@ Warm, playful, and appetizing — like walking into a boutique bakery.
 
 ## 🏗️ Project Structure
 
-```
 Delicia/
 ├── backend/                        # Spring Boot Application
 │   ├── src/
@@ -118,7 +116,6 @@ Delicia/
 ├── docs/                           # Diagrams & Postman collection
 ├── .gitignore
 └── README.md
----
 
 ## 🗺️ Future Roadmap
 
@@ -133,7 +130,7 @@ Delicia/
 
 Contributions and feature requests are welcome!
 1. Fork the repo
-2. Create a branch (`git checkout -b feature/amazing-feature`)
+2. Create a branch 
 3. Commit your changes
 4. Push and open a Pull Request
 
@@ -143,7 +140,6 @@ Contributions and feature requests are welcome!
 
 🔗 GitHub: [github.com/gaurv-dev/delicia](https://github.com/gaurv-dev/delicia)
 
----
 
 <div align="center">
 

@@ -7,7 +7,6 @@
 
 </div>
 
----
 
 ## 🍰 About Delicia
 
@@ -17,7 +16,6 @@ Choose the flavor, size, shape, frosting, and toppings, add a personal message, 
 
 At its core, Delicia is simple: **it's what happens when "build-a-cake" meets modern e-commerce.**
 
----
 
 ## 🎯 Project Objectives
 
@@ -28,7 +26,6 @@ At its core, Delicia is simple: **it's what happens when "build-a-cake" meets mo
 - ⚙️ Build a **scalable, decoupled architecture** using REST APIs so the frontend and backend evolve independently.
 - 📱 Ensure the platform is **responsive** across devices — desktop, tablet, and mobile.
 
----
 
 ## ✨ Key Features
 
@@ -54,7 +51,6 @@ At its core, Delicia is simple: **it's what happens when "build-a-cake" meets mo
 - 💾 NoSQL data persistence with MongoDB
 - 📱 Fully responsive UI
 
----
 
 ## 🧰 Tech Stack
 
@@ -73,7 +69,6 @@ At its core, Delicia is simple: **it's what happens when "build-a-cake" meets mo
 
 </div>
 
----
 
 ## 🎨 Theme
 
@@ -84,7 +79,6 @@ Warm, playful, and appetizing — like walking into a boutique bakery.
 - **Visuals:** Rounded cards, soft shadows, bakery-themed icons
 - **Feel:** Smooth transitions that make browsing cakes feel indulgent
 
----
 
 ## 🏗️ Project Structure
 
@@ -135,8 +129,6 @@ Delicia/
 - [ ] Multi-language support
 - [ ] Dockerized deployment
 
----
-
 ## 🤝 Contributing
 
 Contributions and feature requests are welcome!
@@ -144,8 +136,6 @@ Contributions and feature requests are welcome!
 2. Create a branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes
 4. Push and open a Pull Request
-
----
 
 ## 🔗 Connect
 

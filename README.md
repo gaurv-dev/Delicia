@@ -7,6 +7,8 @@
 
 </div>
 
+---
+
 ## 🍰 About Delicia
 
 Picture this: it's someone's birthday, and instead of scrolling through a bakery's fixed menu hoping something "close enough" shows up, they open **Delicia** — and build the cake they actually imagined.
@@ -14,6 +16,8 @@ Picture this: it's someone's birthday, and instead of scrolling through a bakery
 Choose the flavor, size, shape, frosting, and toppings, add a personal message, and in a few clicks a half-formed idea turns into a real order sent straight to a baker. Prefer not to design one? Browse ready-made cakes instead.
 
 At its core, Delicia is simple: **it's what happens when "build-a-cake" meets modern e-commerce.**
+
+---
 
 ## 🎯 Project Objectives
 
@@ -23,6 +27,8 @@ At its core, Delicia is simple: **it's what happens when "build-a-cake" meets mo
 - 🔐 Implement **secure authentication** for customers and admins.
 - ⚙️ Build a **scalable, decoupled architecture** using REST APIs so the frontend and backend evolve independently.
 - 📱 Ensure the platform is **responsive** across devices — desktop, tablet, and mobile.
+
+---
 
 ## ✨ Key Features
 
@@ -48,6 +54,8 @@ At its core, Delicia is simple: **it's what happens when "build-a-cake" meets mo
 - 💾 NoSQL data persistence with MongoDB
 - 📱 Fully responsive UI
 
+---
+
 ## 🧰 Tech Stack
 
 <div align="center">
@@ -65,6 +73,8 @@ At its core, Delicia is simple: **it's what happens when "build-a-cake" meets mo
 
 </div>
 
+---
+
 ## 🎨 Theme
 
 Warm, playful, and appetizing — like walking into a boutique bakery.
@@ -73,6 +83,8 @@ Warm, playful, and appetizing — like walking into a boutique bakery.
 - **Typography:** Rounded, friendly headings + clean sans-serif body text
 - **Visuals:** Rounded cards, soft shadows, bakery-themed icons
 - **Feel:** Smooth transitions that make browsing cakes feel indulgent
+
+---
 
 ## 🏗️ Project Structure
 
@@ -113,30 +125,39 @@ Delicia/
 ├── .gitignore
 └── README.md
 ```
-🗺️ Future Roadmap
- Payment gateway integration (Razorpay/Stripe)
- Live order tracking with delivery partner integration
- AI-based cake design suggestions
- Loyalty points & discount coupons
- Multi-language support
- Dockerized deployment
- 
-🤝 Contributing
+
+## 🗺️ Future Roadmap
+
+- [ ] Payment gateway integration (Razorpay/Stripe)
+- [ ] Live order tracking with delivery partner integration
+- [ ] AI-based cake design suggestions
+- [ ] Loyalty points & discount coupons
+- [ ] Multi-language support
+- [ ] Dockerized deployment
+
+---
+
+## 🤝 Contributing
 
 Contributions and feature requests are welcome!
+1. Fork the repo
+2. Create a branch
+3. Commit your changes
+4. Push and open a Pull Request
 
-Fork the repo
-Create a branch (git checkout -b feature/amazing-feature)
-Commit your changes
-Push and open a Pull Request
-🔗 Connect
+---
+
+## 🔗 Connect
 
 ⭐ If you like this project, consider starring the repo on GitHub — it helps a lot!
 
-🔗 GitHub: github.com/gaurv-dev/delicia
+🔗 GitHub: [github.com/gaurv-dev/delicia](https://github.com/gaurv-dev/delicia)
+
+---
 
 <div align="center">
-🎂 Delicia — Because every celebration deserves a cake that's uniquely yours.
+
+### 🎂 *Delicia — Because every celebration deserves a cake that's uniquely yours.*
 
 Made with ❤️ and a little bit of frosting.
 

@@ -15,7 +15,6 @@ Choose the flavor, size, shape, frosting, and toppings, add a personal message, 
 
 At its core, Delicia is simple: **it's what happens when "build-a-cake" meets modern e-commerce.**
 
-
 ## 🎯 Project Objectives
 
 - 🎨 Give customers a seamless way to **customize cakes** (flavor, size, layers, toppings, messages) before ordering.
@@ -24,7 +23,6 @@ At its core, Delicia is simple: **it's what happens when "build-a-cake" meets mo
 - 🔐 Implement **secure authentication** for customers and admins.
 - ⚙️ Build a **scalable, decoupled architecture** using REST APIs so the frontend and backend evolve independently.
 - 📱 Ensure the platform is **responsive** across devices — desktop, tablet, and mobile.
-
 
 ## ✨ Key Features
 
@@ -50,7 +48,6 @@ At its core, Delicia is simple: **it's what happens when "build-a-cake" meets mo
 - 💾 NoSQL data persistence with MongoDB
 - 📱 Fully responsive UI
 
-
 ## 🧰 Tech Stack
 
 <div align="center">
@@ -68,7 +65,6 @@ At its core, Delicia is simple: **it's what happens when "build-a-cake" meets mo
 
 </div>
 
-
 ## 🎨 Theme
 
 Warm, playful, and appetizing — like walking into a boutique bakery.
@@ -78,9 +74,9 @@ Warm, playful, and appetizing — like walking into a boutique bakery.
 - **Visuals:** Rounded cards, soft shadows, bakery-themed icons
 - **Feel:** Smooth transitions that make browsing cakes feel indulgent
 
-
 ## 🏗️ Project Structure
 
+```
 Delicia/
 ├── backend/                        # Spring Boot Application
 │   ├── src/
@@ -130,7 +126,7 @@ Delicia/
 
 Contributions and feature requests are welcome!
 1. Fork the repo
-2. Create a branch 
+2. Create a branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes
 4. Push and open a Pull Request
 
@@ -139,7 +135,6 @@ Contributions and feature requests are welcome!
 ⭐ If you like this project, consider starring the repo on GitHub — it helps a lot!
 
 🔗 GitHub: [github.com/gaurv-dev/delicia](https://github.com/gaurv-dev/delicia)
-
 
 <div align="center">
 

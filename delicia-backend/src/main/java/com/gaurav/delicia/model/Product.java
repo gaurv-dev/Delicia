@@ -59,6 +59,10 @@ public class Product {
         this.updatedDate = updatedDate;
     }
 
+    public Product() {
+
+    }
+
     public String getName() {
         return name;
     }

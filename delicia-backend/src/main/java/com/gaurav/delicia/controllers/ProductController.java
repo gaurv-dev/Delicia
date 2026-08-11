@@ -1,5 +1,7 @@
 package com.gaurav.delicia.controllers;
 
+import com.gaurav.delicia.mapper.ProductMapper;
+import com.gaurav.delicia.dto.ProductResponse;
 import com.gaurav.delicia.model.Product;
 import com.gaurav.delicia.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/products")
@@ -17,17 +20,25 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping
-    public ResponseEntity<List<Product>> getProducts(
+    public ResponseEntity<List<ProductResponse>> getProducts(
             @RequestParam(required = false) String category,
             @RequestParam(required = false) String search
     ) {
+        List<Product> products;
+
         if (search != null && !search.isEmpty()) {
-            return ResponseEntity.ok(productService.searchProducts(search));
+            products = productService.getAllProducts(search);
+        } else if (category != null && !category.isEmpty()) {
+            products = productService.getProductsByCategory(category);
+        } else {
+            products = productService.getAllProducts(search);
         }
-        if (category != null && !category.isEmpty()) {
-            return ResponseEntity.ok(productService.getProductsByCategory(category));
-        }
-        return ResponseEntity.ok(productService.getAllProducts());
+
+        List<ProductResponse> responses = products.stream()
+                .map(ProductMapper::toResponse)
+                .collect(Collectors.toList()).reversed();
+
+        return ResponseEntity.ok(responses);
     }
 
     @GetMapping("/{id}")

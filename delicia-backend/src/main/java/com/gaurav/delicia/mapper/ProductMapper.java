@@ -6,7 +6,6 @@ import com.gaurav.delicia.model.Product;
 
 public class ProductMapper {
 
-    // Convert incoming request -> entity (for create/update)
     public static Product toEntity(ProductRequest request) {
         if (request == null) {
             return null;
@@ -25,7 +24,6 @@ public class ProductMapper {
         return product;
     }
 
-    // Convert entity -> outgoing response
     public static ProductResponse toResponse(Product product) {
         if (product == null) {
             return null;

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class Order {
 
     private Address deliveryAddress;
 
-    private double totalAmount;
+    private BigDecimal totalAmount;
 
     private OrderStatus status;
     private LocalDateTime orderDate;
@@ -42,7 +43,7 @@ public class Order {
         private String productId;
         private String productName;
         private int quantity;
-        private double price;
+        private BigDecimal price;
         private String customizationNote;
     }
 

@@ -4,6 +4,8 @@ import com.gaurav.delicia.dto.ProductRequest;
 import com.gaurav.delicia.dto.ProductResponse;
 import com.gaurav.delicia.model.Product;
 
+import java.math.BigDecimal;
+
 public class ProductMapper {
 
     public static Product toEntity(ProductRequest request) {

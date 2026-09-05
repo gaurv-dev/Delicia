@@ -49,7 +49,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         try {
             email = jwtUtil.extractEmail(token);
         } catch (Exception e) {
-            // Invalid/expired token — treat as unauthenticated, let SecurityConfig reject if needed
             filterChain.doFilter(request, response);
             return;
         }

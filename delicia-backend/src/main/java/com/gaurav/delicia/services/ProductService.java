@@ -1,4 +1,3 @@
-
 package com.gaurav.delicia.services;
 
 import com.gaurav.delicia.exception.ResourceNotFoundException;
@@ -15,7 +14,7 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public List<Product> getAllProducts(String search) {
+    public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
@@ -28,15 +27,37 @@ public class ProductService {
         return productRepository.findByCategory(category);
     }
 
+    public List<Product> searchProducts(String keyword) {
+        return productRepository.findByNameContainingIgnoreCase(keyword);
+    }
+
+    public List<Product> getEgglessProducts(boolean eggless) {
+        return productRepository.findByEggless(eggless);
+    }
+
     public Product createProduct(Product product) {
         return productRepository.save(product);
     }
 
-    public Product updateProduct(String id, Product product) {
-        return productRepository.save(product);
+    public Product updateProduct(String id, Product updatedProduct) {
+        Product existing = getProductById(id);
+
+        existing.setName(updatedProduct.getName());
+        existing.setPrice(updatedProduct.getPrice());
+        existing.setCategory(updatedProduct.getCategory());
+        existing.setFlavour(updatedProduct.getFlavour());
+        existing.setEggless(updatedProduct.isEggless());
+        existing.setWeight(updatedProduct.getWeight());
+        existing.setStore(updatedProduct.getStore());
+        existing.setImageUrl(updatedProduct.getImageUrl());
+        existing.setFeatured(updatedProduct.isFeatured());
+        existing.setAvailable(updatedProduct.isAvailable());
+
+        return productRepository.save(existing);
     }
 
-    public Product deleteProduct(String id) {
-        return productRepository.save(getProductById(id));
+    public void deleteProduct(String id) {
+        Product existing = getProductById(id);
+        productRepository.delete(existing);
     }
 }

@@ -1,7 +1,8 @@
 package com.gaurav.delicia.controllers;
 
-import com.gaurav.delicia.mapper.ProductMapper;
+import com.gaurav.delicia.dto.ProductRequest;
 import com.gaurav.delicia.dto.ProductResponse;
+import com.gaurav.delicia.mapper.ProductMapper;
 import com.gaurav.delicia.model.Product;
 import com.gaurav.delicia.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,37 +28,41 @@ public class ProductController {
         List<Product> products;
 
         if (search != null && !search.isEmpty()) {
-            products = productService.getAllProducts(search);
+            products = productService.searchProducts(search);
         } else if (category != null && !category.isEmpty()) {
             products = productService.getProductsByCategory(category);
         } else {
-            products = productService.getAllProducts(search);
+            products = productService.getAllProducts();
         }
 
         List<ProductResponse> responses = products.stream()
                 .map(ProductMapper::toResponse)
-                .collect(Collectors.toList()).reversed();
+                .collect(Collectors.toList());
 
         return ResponseEntity.ok(responses);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable String id) {
-        return ResponseEntity.ok(productService.getProductById(id));
+    public ResponseEntity<ProductResponse> getProductById(@PathVariable String id) {
+        Product product = productService.getProductById(id);
+        return ResponseEntity.ok(ProductMapper.toResponse(product));
     }
 
     @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
+    public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest request) {
+        Product product = ProductMapper.toEntity(request);
         Product saved = productService.createProduct(product);
-        return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+        return ResponseEntity.status(HttpStatus.CREATED).body(ProductMapper.toResponse(saved));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Product> updateProduct(
+    public ResponseEntity<ProductResponse> updateProduct(
             @PathVariable String id,
-            @RequestBody Product product
+            @RequestBody ProductRequest request
     ) {
-        return ResponseEntity.ok(productService.updateProduct(id, product));
+        Product product = ProductMapper.toEntity(request);
+        Product updated = productService.updateProduct(id, product);
+        return ResponseEntity.ok(ProductMapper.toResponse(updated));
     }
 
     @DeleteMapping("/{id}")

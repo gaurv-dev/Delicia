@@ -1,0 +1,42 @@
+.checkout-page { background: #FBF3E7; min-height: 100vh; font-family: 'Work Sans', sans-serif; color: #3B2419; padding: 48px 24px 80px; }
+.checkout-wrap { max-width: 900px; margin: 0 auto; }
+.checkout-wrap h1 { font-family: 'Fraunces', serif; font-size: 32px; margin-bottom: 28px; }
+
+.checkout-state { color: #6B4A3A; }
+.checkout-empty { text-align: center; padding: 60px 20px; color: #6B4A3A; }
+.checkout-empty p { margin-bottom: 20px; }
+
+.checkout-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: start; }
+
+.checkout-form { background: #FFFDF9; border: 1px solid #E8DCC8; border-radius: 16px; padding: 28px; }
+.checkout-form h2 { font-family: 'Fraunces', serif; font-size: 19px; margin: 0 0 18px; }
+
+.checkout-error { background: #F3D6D8; color: #9E1C49; padding: 10px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 16px; }
+
+.checkout-field { margin-bottom: 16px; }
+.checkout-field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.checkout-field input, .checkout-field textarea {
+    width: 100%; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #E8DCC8;
+    font-size: 14px; font-family: inherit; background: #FBF3E7; resize: vertical;
+}
+.checkout-field input:focus, .checkout-field textarea:focus { outline: none; border-color: #C2255C; }
+
+.checkout-field-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+.checkout-submit { width: 100%; margin-top: 6px; }
+
+.checkout-summary { background: #FFFDF9; border: 1px solid #E8DCC8; border-radius: 16px; padding: 24px; position: sticky; top: 24px; }
+.checkout-summary h2 { font-family: 'Fraunces', serif; font-size: 19px; margin: 0 0 16px; }
+.checkout-summary-item { display: flex; justify-content: space-between; font-size: 14px; padding: 8px 0; border-bottom: 1px solid #F3EDE0; }
+.checkout-summary-total { display: flex; justify-content: space-between; font-size: 17px; padding-top: 14px; margin-top: 6px; }
+
+.checkout-success { text-align: center; padding: 80px 20px; max-width: 420px; margin: 0 auto; }
+.checkout-success-icon { font-size: 56px; margin-bottom: 12px; }
+.checkout-success h1 { font-family: 'Fraunces', serif; font-size: 28px; margin: 0 0 8px; }
+.checkout-success p { color: #6B4A3A; margin: 4px 0; }
+.checkout-success-id { font-size: 13px; opacity: 0.7; margin-bottom: 24px; }
+
+@media (max-width: 720px) {
+    .checkout-grid { grid-template-columns: 1fr; }
+    .checkout-field-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,11 @@
+.footer {
+    background: #3B2419; color: #D8CDBB; font-family: 'Work Sans', sans-serif;
+    padding: 40px 48px 24px; margin-top: 48px;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: #F3D6D8; }
+.footer-brand p { font-size: 13px; margin-top: 6px; color: #A8917E; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { color: #D8CDBB; text-decoration: none; font-size: 14px; }
+.footer-links a:hover { color: #F3D6D8; }
+.footer-copy { font-size: 12px; color: #8A7562; width: 100%; margin-top: 20px; padding-top: 16px; border-top: 1px solid #55402F; }

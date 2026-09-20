@@ -1,0 +1,38 @@
+.pd-page { background: #FBF3E7; min-height: 100vh; font-family: 'Work Sans', sans-serif; color: #3B2419; }
+.pd-state { text-align: center; padding: 80px 20px; color: #6B4A3A; }
+
+.pd-wrap { max-width: 1000px; margin: 0 auto; padding: 48px 24px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+
+.pd-image { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; background: #F3D6D8; }
+.pd-image img { width: 100%; height: 100%; object-fit: cover; }
+.pd-sold-out { position: absolute; top: 16px; right: 16px; background: #3B2419; color: #FFFDF9; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 999px; }
+
+.pd-category { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #9E1C49; }
+.pd-info h1 { font-family: 'Fraunces', serif; font-size: 34px; margin: 8px 0 14px; }
+
+.pd-tags { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+.pd-tag { font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 999px; background: #F3EDE0; color: #6B4A3A; }
+.pd-tag-eggless { background: #DFF0D8; color: #3C763D; }
+
+.pd-price { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 600; margin: 0 0 8px; }
+.pd-store { color: #6B4A3A; font-size: 14px; margin-bottom: 24px; }
+
+.pd-field { margin-bottom: 24px; }
+.pd-field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.pd-field textarea {
+    width: 100%; padding: 12px 14px; border-radius: 10px; border: 1.5px solid #E8DCC8;
+    font-size: 14px; font-family: inherit; background: #FFFDF9; resize: vertical;
+}
+.pd-field textarea:focus { outline: none; border-color: #C2255C; }
+
+.pd-actions { display: flex; align-items: center; gap: 16px; }
+
+.pd-qty { display: flex; align-items: center; gap: 14px; border: 1.5px solid #E8DCC8; border-radius: 999px; padding: 8px 16px; background: #FFFDF9; }
+.pd-qty button { width: 28px; height: 28px; border-radius: 50%; border: none; background: #F3EDE0; cursor: pointer; font-size: 16px; }
+.pd-qty span { min-width: 16px; text-align: center; font-weight: 600; }
+
+.pd-add { flex: 1; }
+
+@media (max-width: 720px) {
+    .pd-wrap { grid-template-columns: 1fr; gap: 28px; }
+}

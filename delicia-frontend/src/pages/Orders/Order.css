@@ -1,0 +1,25 @@
+.orders-page { background: #FBF3E7; min-height: 100vh; font-family: 'Work Sans', sans-serif; color: #3B2419; padding: 48px 24px 80px; }
+.orders-wrap { max-width: 720px; margin: 0 auto; }
+.orders-wrap h1 { font-family: 'Fraunces', serif; font-size: 32px; margin-bottom: 28px; }
+
+.orders-state { color: #6B4A3A; }
+.orders-state-error { color: #9E1C49; }
+.orders-empty { text-align: center; padding: 60px 20px; color: #6B4A3A; }
+.orders-empty p { margin-bottom: 20px; }
+
+.order-card { background: #FFFDF9; border: 1px solid #E8DCC8; border-radius: 16px; padding: 20px 22px; margin-bottom: 18px; }
+
+.order-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #F3EDE0; }
+.order-card-id { display: block; font-weight: 600; font-size: 14px; }
+.order-card-date { display: block; font-size: 12px; color: #6B4A3A; margin-top: 2px; }
+
+.order-status { font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+.order-status-pending { background: #F3E0B8; color: #8A6414; }
+.order-status-confirmed, .order-status-baking { background: #F3D6D8; color: #9E1C49; }
+.order-status-out_for_delivery { background: #D6E4F0; color: #1E5A8A; }
+.order-status-delivered { background: #DFF0D8; color: #3C763D; }
+.order-status-cancelled { background: #EAEAEA; color: #6B6B6B; }
+
+.order-item-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; color: #6B4A3A; }
+
+.order-card-footer { display: flex; justify-content: space-between; margin-top: 12px; padding-top: 12px; border-top: 1px solid #F3EDE0; font-size: 15px; }

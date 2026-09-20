@@ -1,0 +1,20 @@
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-email {
+    font-size: 13px;
+    color: #6B4A3A;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn-outline {
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+}

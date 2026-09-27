@@ -6,7 +6,7 @@ import {
 import {
     AuthProvider
 } from '../context/AuthContext';
-import Home from '../pages/Home';
+import Home from '../pages/Home/Home.jsx';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Cart from '../pages/Cart/Cart';
@@ -15,7 +15,7 @@ import Orders from '../pages/Orders/Orders';
 import ProductDetails from '../pages/ProductDetails/ProductDetails';
 import Profile from '../pages/Profile/Profile';
 import NotFound from '../pages/NotFound/NotFound';
-import AdminProducts from '../pages/Admin/Adminproduct';
+import AdminProducts from '../pages/AdminProducts/AdminProducts';
 import { PrivateRoute, AdminRoute } from './PrivateRoutes';
 
 export default function AppRoutes() {

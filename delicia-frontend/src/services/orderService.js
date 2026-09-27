@@ -1,4 +1,4 @@
-import api from './api';
+import { api } from './api';
 
 export const placeOrder = async (userId, orderRequest) => {
     const res = await api.post('/orders', orderRequest, { params: { userId } });

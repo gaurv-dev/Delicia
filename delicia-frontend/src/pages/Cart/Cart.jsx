@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { getCart, updateItemQty, removeItem } from '../services/cartService';
-import Navbar from '../components/Navbar';
+import { useAuth } from "../../context/AuthContext";
+import { getCart, updateItemQty, removeItem } from "../../services/cartService";
+import Navbar from "../../components/Navbar/Navbar";
 import './Cart.css';
 
 export default function Cart() {
@@ -98,7 +98,7 @@ export default function Cart() {
 
                         <div className="cart-summary">
                             <span>Total</span>
-                            <strong>₹{total.toFixed(2)}</strong>
+                            <strong  g>₹{total.toFixed(2)}</strong>
                         </div>
                         <a href="/checkout" className="btn btn-primary cart-checkout">Checkout</a>
                     </>

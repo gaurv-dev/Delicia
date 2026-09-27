@@ -1,4 +1,4 @@
-import api from './api';
+import { api } from './api';
 
 export const getCart = async (userId) => {
     const res = await api.get('/cart', { params: { userId } });

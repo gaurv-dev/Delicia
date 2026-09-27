@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getProductById } from '../../services/productService';
+import { getProductById } from '../../services/productService.js';
 import { addItem } from '../../services/cartService';
 import { useAuth } from '../../context/AuthContext';
 import Navbar from '../../components/Navbar/Navbar';

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { addItem } from '../services/cartService';
+import { useAuth } from '../../context/AuthContext';
+import { addItem } from '../../services/cartService';
 
 const FALLBACK_IMG = 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop';
 

@@ -1,4 +1,7 @@
-import { useAuth } from "../../context/AuthContext";
+import { Link, NavLink } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import './Navbar.css';
+
 export default function Navbar() {
     const { isLoggedIn, email, logout } = useAuth();
 
@@ -9,18 +12,16 @@ export default function Navbar() {
 
     return (
         <header className="navbar">
-            <a href="/" className="navbar-logo">
-                Delicia
-            </a>
+            <Link to="/" className="navbar-logo">Delicia</Link>
+
             <nav className="navbar-links">
-                <a href="/">Counter</a>
-                <a href="/admin/products">Build a cake</a>
-                {isLoggedIn && <a href="/orders">My orders</a>}
+                <NavLink to="/" end>Counter</NavLink>
+                <NavLink to="/build">Build a cake</NavLink>
+                {isLoggedIn && <NavLink to="/orders">My orders</NavLink>}
             </nav>
+
             <div className="navbar-actions">
-                <a href="/cart" className="navbar-cart" aria-label="Cart">
-                    🛍️
-                </a>
+                <Link to="/cart" className="navbar-cart" aria-label="Cart">🛍️</Link>
                 {isLoggedIn ? (
                     <div className="navbar-user">
                         <span className="navbar-email">{email}</span>
@@ -29,7 +30,7 @@ export default function Navbar() {
                         </button>
                     </div>
                 ) : (
-                    <a href="/login" className="btn btn-small btn-outline">Log in</a>
+                    <Link to="/login" className="btn btn-small btn-primary">Log in</Link>
                 )}
             </div>
         </header>

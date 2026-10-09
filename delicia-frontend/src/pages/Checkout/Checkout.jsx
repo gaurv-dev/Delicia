@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { getCart } from '../../services/cartService';
 import { placeOrder } from '../../services/orderService';
+import Navbar from '../../components/Navbar/Navbar';
 import './Checkout.css';
 
 export default function Checkout() {
@@ -22,11 +23,19 @@ export default function Checkout() {
 
     useEffect(() => {
         if (!isLoggedIn) { setLoading(false); return; }
-        getCart(userId).then(setCart).finally(() => setLoading(false));
+        getCart(userId)
+            .then(setCart)
+            .catch(() => setError('Could not load your cart.'))
+            .finally(() => setLoading(false));
     }, [isLoggedIn]);
 
     const items = cart?.items || [];
     const total = items.reduce((sum, i) => sum + (i.price || 0) * i.quantity, 0);
+
+    // earliest selectable date/time = now (formatted for datetime-local)
+    const minDate = new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+        .toISOString()
+        .slice(0, 16);
 
     async function handlePlaceOrder(e) {
         e.preventDefault();
@@ -51,9 +60,13 @@ export default function Checkout() {
     if (!isLoggedIn) {
         return (
             <div className="checkout-page">
-                <div className="checkout-empty">
-                    <p>Sign in to check out.</p>
-                    <a className="btn btn-primary" href="/login">Log in</a>
+                <Navbar />
+                <div className="checkout-wrap">
+                    <div className="checkout-empty">
+                        <div className="checkout-empty-icon">🎂</div>
+                        <p>Sign in to check out.</p>
+                        <a className="checkout-btn" href="/login">Log in</a>
+                    </div>
                 </div>
             </div>
         );
@@ -62,12 +75,15 @@ export default function Checkout() {
     if (placed) {
         return (
             <div className="checkout-page">
-                <div className="checkout-success">
-                    <div className="checkout-success-icon">🎂</div>
-                    <h1>Order placed!</h1>
-                    <p>Your order is confirmed and heading to the kitchen.</p>
-                    <p className="checkout-success-id">Order ID: {placed.id}</p>
-                    <a className="btn btn-primary" href="/orders">View my orders</a>
+                <Navbar />
+                <div className="checkout-wrap">
+                    <div className="checkout-success">
+                        <div className="checkout-success-icon">🎉</div>
+                        <h1>Order placed!</h1>
+                        <p>Your order is confirmed and heading to the kitchen.</p>
+                        <p className="checkout-success-id">Order ID: {placed.id}</p>
+                        <a className="checkout-btn" href="/orders">View my orders</a>
+                    </div>
                 </div>
             </div>
         );
@@ -75,15 +91,18 @@ export default function Checkout() {
 
     return (
         <div className="checkout-page">
+            <Navbar />
             <div className="checkout-wrap">
+                <span className="checkout-tag">Almost there</span>
                 <h1>Checkout</h1>
 
                 {loading && <p className="checkout-state">Loading your cart…</p>}
 
                 {!loading && items.length === 0 && (
                     <div className="checkout-empty">
+                        <div className="checkout-empty-icon">🧁</div>
                         <p>Your cart is empty — nothing to check out yet.</p>
-                        <a className="btn btn-primary" href="/">Browse the counter</a>
+                        <a className="checkout-btn" href="/">Browse the counter</a>
                     </div>
                 )}
 
@@ -130,9 +149,10 @@ export default function Checkout() {
                             </div>
 
                             <div className="checkout-field">
-                                <label>Delivery date & time</label>
+                                <label>Delivery date &amp; time</label>
                                 <input
                                     type="datetime-local"
+                                    min={minDate}
                                     value={deliveryDate}
                                     onChange={(e) => setDeliveryDate(e.target.value)}
                                     required
@@ -149,7 +169,7 @@ export default function Checkout() {
                                 />
                             </div>
 
-                            <button className="btn btn-primary checkout-submit" type="submit" disabled={placing}>
+                            <button className="checkout-btn checkout-submit" type="submit" disabled={placing}>
                                 {placing ? 'Placing order…' : `Place order — ₹${total.toFixed(2)}`}
                             </button>
                         </form>
@@ -159,7 +179,7 @@ export default function Checkout() {
                             {items.map((item) => (
                                 <div className="checkout-summary-item" key={item.productId}>
                                     <span>{item.productName} × {item.quantity}</span>
-                                    <span>₹{(item.price * item.quantity).toFixed(2)}</span>
+                                    <span>₹{((item.price || 0) * item.quantity).toFixed(2)}</span>
                                 </div>
                             ))}
                             <div className="checkout-summary-total">

@@ -14,7 +14,7 @@ export default function Home() {
 
     useEffect(() => {
         getAllProducts()
-            .then(setProducts)
+            .then((list) => setProducts(list.filter((p) => p.category !== 'CUSTOM')))
             .catch(() => setError('Failed to load products'))
             .finally(() => setLoading(false));
     }, []);

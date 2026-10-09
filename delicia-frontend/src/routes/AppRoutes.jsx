@@ -7,7 +7,7 @@ import {
     AuthProvider
 } from '../context/AuthContext';
 import Home from '../pages/Home/Home.jsx';
-import Login from '../pages/Login';
+import Login from '../pages/Login/Login';
 import Register from '../pages/Register';
 import Cart from '../pages/Cart/Cart';
 import Checkout from '../pages/Checkout/Checkout';
@@ -15,6 +15,7 @@ import Orders from '../pages/Orders/Orders';
 import ProductDetails from '../pages/ProductDetails/ProductDetails';
 import Profile from '../pages/Profile/Profile';
 import NotFound from '../pages/NotFound/NotFound';
+import BuildCake from '../pages/BuildCake/BuildCake';
 import AdminProducts from '../pages/AdminProducts/AdminProducts';
 import { PrivateRoute, AdminRoute } from './PrivateRoutes';
 
@@ -27,7 +28,7 @@ export default function AppRoutes() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/products/:id" element={<ProductDetails />} />
-
+                    <Route path="/build" element={<BuildCake />} />
                     <Route path="/cart" element={
                         <PrivateRoute><Cart /></PrivateRoute>
                     } />

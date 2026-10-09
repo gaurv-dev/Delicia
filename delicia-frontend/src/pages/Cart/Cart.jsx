@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from "../../context/AuthContext";
 import { getCart, updateItemQty, removeItem } from "../../services/cartService";
 import Navbar from "../../components/Navbar/Navbar";
@@ -35,43 +36,55 @@ export default function Cart() {
 
     async function handleQtyChange(productId, quantity) {
         if (quantity < 1) return;
-        const updated = await updateItemQty(userId, productId, quantity);
-        setCart(updated);
+        try {
+            const updated = await updateItemQty(userId, productId, quantity);
+            setCart(updated);
+        } catch {
+            setError('Could not update quantity.');
+        }
     }
 
     async function handleRemove(productId) {
-        const updated = await removeItem(userId, productId);
-        setCart(updated);
+        try {
+            const updated = await removeItem(userId, productId);
+            setCart(updated);
+        } catch {
+            setError('Could not remove item.');
+        }
     }
 
     const items = cart?.items || [];
     const total = items.reduce((sum, i) => sum + (i.price || 0) * i.quantity, 0);
+    const count = items.reduce((sum, i) => sum + i.quantity, 0);
 
     return (
         <div className="cart-page">
             <Navbar />
             <div className="cart-wrap">
+                <span className="cart-tag">Your order</span>
                 <h1>Your cart</h1>
 
                 {!isLoggedIn && (
                     <div className="cart-empty">
+                        <div className="cart-empty-icon">🎂</div>
                         <p>Sign in to see what's waiting in your cart.</p>
-                        <a className="btn btn-primary" href="/login">Log in</a>
+                        <a className="cart-btn" href="/login">Log in</a>
                     </div>
                 )}
 
                 {isLoggedIn && loading && <p className="cart-state">Loading your cart…</p>}
                 {isLoggedIn && error && <p className="cart-state cart-state-error">{error}</p>}
 
-                {isLoggedIn && !loading && !error && items.length === 0 && (
+                {isLoggedIn && !loading && items.length === 0 && (
                     <div className="cart-empty">
+                        <div className="cart-empty-icon">🧁</div>
                         <p>Your cart's empty — go pick something sweet.</p>
-                        <a className="btn btn-primary" href="/">Browse the counter</a>
+                        <a className="cart-btn" href="/">Browse the counter</a>
                     </div>
                 )}
 
                 {isLoggedIn && !loading && items.length > 0 && (
-                    <>
+                    <div className="cart-layout">
                         <div className="cart-items">
                             {items.map((item) => (
                                 <div className="cart-item" key={item.productId}>
@@ -89,19 +102,34 @@ export default function Cart() {
                                         <button onClick={() => handleQtyChange(item.productId, item.quantity + 1)}>+</button>
                                     </div>
 
-                                    <button className="cart-item-remove" onClick={() => handleRemove(item.productId)}>
-                                        Remove
-                                    </button>
+                                    <div className="cart-item-right">
+                                        <strong className="cart-item-line">
+                                            ₹{((item.price || 0) * item.quantity).toFixed(2)}
+                                        </strong>
+                                        <button className="cart-item-remove" onClick={() => handleRemove(item.productId)}>
+                                            Remove
+                                        </button>
+                                    </div>
                                 </div>
                             ))}
                         </div>
 
                         <div className="cart-summary">
-                            <span>Total</span>
-                            <strong  g>₹{total.toFixed(2)}</strong>
+                            <h2>Summary</h2>
+                            <div className="cart-summary-row">
+                                <span>Items</span>
+                                <span>{count}</span>
+                            </div>
+                            <div className="cart-summary-total">
+                                <span>Total</span>
+                                <strong>₹{total.toFixed(2)}</strong>
+                            </div>
+                            <Link className="cart-btn" to="/login">Log in</Link>
+                            <Link className="cart-btn" to="/">Browse the counter</Link>
+                            <Link to="/checkout" className="cart-btn cart-checkout">Checkout</Link>
+                            <Link to="/" className="cart-continue">Continue shopping</Link>
                         </div>
-                        <a href="/checkout" className="btn btn-primary cart-checkout">Checkout</a>
-                    </>
+                    </div>
                 )}
             </div>
         </div>

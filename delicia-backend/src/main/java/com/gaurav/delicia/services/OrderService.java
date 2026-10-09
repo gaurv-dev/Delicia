@@ -100,6 +100,11 @@ public class OrderService {
         order.setStatus(Order.OrderStatus.CANCELLED);
         return orderRepository.save(order);
     }
+    public Order updateStatus(String id, Order.OrderStatus status) {
+        Order order = getOrderById(id);
+        order.setStatus(status);
+        return orderRepository.save(order);
+    }
 
     public void deleteOrder(String orderId) {
         if (!orderRepository.existsById(orderId)) {
@@ -107,4 +112,5 @@ public class OrderService {
         }
         orderRepository.deleteById(orderId);
     }
+
 }

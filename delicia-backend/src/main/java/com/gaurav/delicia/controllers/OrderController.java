@@ -56,11 +56,10 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.CREATED).body(order);
     }
     @PutMapping("/{id}/status")
-    public ResponseEntity<Order> updateOrderStatus(
-            @PathVariable String id,
-            @RequestParam String status
-    ) {
-        Order updated = orderService.updateOrderStatus(id, Order.OrderStatus.valueOf(status));
+    public ResponseEntity<Order> updateStatus(@PathVariable String id,
+                                              @RequestParam String status) {
+        Order updated = orderService.updateStatus(
+                id, Order.OrderStatus.valueOf(status.toUpperCase()));
         return ResponseEntity.ok(updated);
     }
 

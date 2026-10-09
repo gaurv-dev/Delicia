@@ -15,8 +15,7 @@ public class DataSeeder {
     @Bean
     CommandLineRunner seedProducts(ProductRepository repo) {
         return args -> {
-            if (repo.count() > 0) return; // don't duplicate on every restart
-
+            if (repo.count() > 0) return;
             repo.saveAll(List.of(
                     cake("Classic Chocolate Truffle", "Birthday", "Chocolate", false, "1kg", 599,
                             "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=400&fit=crop", 4.6, true),
